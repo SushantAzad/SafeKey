@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Strength Checker</h1>
+
+      <div class="about-section">
+        <h2>About This Project</h2>
+        <p>
+          The Password Strength Checker evaluates passwords based on length, the
+          inclusion of uppercase and lowercase letters, numbers, and special
+          characters. It provides real-time feedback on the strength of your
+          password, indicating whether it is very weak, weak, moderate, strong,
+          or very strong.
+        </p>
+        <p>
+          In addition to checking password strength, you can also compare your
+          password against a list of commonly used passwords. If your password
+          matches any entry in the list, it means your password is commonly used
+          and could be easily cracked by attackers. For that you have to
+          upload,which you can download from here
+          <a
+            href="https://github.com/danielmiessler/SecLists/tree/master/Passwords"
+            target="_blank"
+            >Download Password list</a
+          >.
+        </p>
+        
+      </div>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        oninput="checkPasswordStrength()"
+      />
+      <div id="strengthMessage" class="strength-message"></div>
+      <div class="strength-bar-container">
+        <div id="strengthBar" class="strength-bar"></div>
+      </div>
+
+      <h2>Check Password Against Common List</h2>
+      <input type="file" id="passwordList" accept=".txt" />
+      <button onclick="checkPasswordAgainstList()">Check Password</button>
+      <div id="listCheckMessage" class="list-check-message"></div>
+      <button onclick="generatePassword()">Generate Password</button>
+      <button onclick="copyPassword()">Copy Password</button>
+    <script src="test.js"></script>
+  </body>
+</html>
